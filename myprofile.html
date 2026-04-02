@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자기소개 페이지</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ffd6e0, #d6e6ff, #e6ffd6);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* 배경 움직이는 느낌 */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent),
+                        radial-gradient(circle at 70% 70%, rgba(255,255,255,0.3), transparent);
+            animation: moveBg 10s linear infinite;
+        }
+
+        @keyframes moveBg {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(-50px, -50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .card {
+            position: relative;
+            width: 420px;
+            padding: 30px;
+            border-radius: 20px;
+
+            /* 유리 느낌 핵심 */
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            border: 1px solid rgba(255,255,255,0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+            text-align: center;
+
+            /* 떠있는 애니메이션 */
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255,255,255,0.6);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            margin: 10px 0;
+            color: #444;
+        }
+
+        .info {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .info p {
+            margin: 8px 0;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.5);
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 5px;
+            backdrop-filter: blur(5px);
+        }
+
+        .section {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <img src="yomi.jpg" alt="프로필 사진" class="profile-img">
+
+    <h1>표다은</h1>
+
+    <div class="info">
+        <p><span class="label">나이:</span> 23살</p>
+        <p><span class="label">학과:</span> 컴퓨터공학과 3학년</p>
+        <p><span class="label">MBTI:</span> ENFP</p>
+        <p><span class="label">좋아하는 색:</span> 파란색</p>
+
+        <div class="section">
+            <p class="label">좋아하는 것</p>
+            <div class="box">
+                바다, 카페, 초밥
+            </div>
+        </div>
+
+        <div class="section">
+            <p class="label">싫어하는 것</p>
+            <div class="box">
+                땡볕, 감자튀김
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
